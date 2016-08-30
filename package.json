@@ -1,0 +1,16 @@
+{
+  "name": "functional-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha -R ../../../reporters/FunctionalJsReporter koans"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.0.2",
+    "ramda": "^0.22.1"
+  }
+}
