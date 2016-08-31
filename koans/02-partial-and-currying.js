@@ -11,6 +11,10 @@ describe('Composition, partial application and currying', () => {
     expect(getFirstNames(students)).to.deep.equal(['John', 'Alice']);
   });
 
+  it('Take the vanilla version of filter from previous exercises and add some curry a\'la R.filter', () => {
+
+  });
+
   it('composing functions makes your code cleaner, more debugable and re-usable!', () => {
     const incAndSum = R.compose(
 
@@ -22,7 +26,8 @@ describe('Composition, partial application and currying', () => {
 
   it('re-usability with composability - get first names and reverse them', () => {
     const students = [{ name: 'John' }, { name: 'Alice' }];
-    const reversedFirstNames = __; // use R.compose
+    // Hint: compose
+    const reversedFirstNames = __;
 
     expect(reversedFirstNames(students)).to.deep.equal(['nhoJ', 'ecilA']);
   });
@@ -47,7 +52,6 @@ describe('Composition, partial application and currying', () => {
   });
 
   it('Sometimes you want to define different flavours of the same function using partials', () => {
-
     const valueString = (valueType, value) => valueType + ': ' + value;
     const cpmValue = R.partial(valueString, ['cpm']);
     const cpiValue = R.partial(valueString, ['cpi']);
@@ -63,9 +67,7 @@ describe('Composition, partial application and currying', () => {
       };
     };
 
-    const cpiFn = valueString('cpi');
+    const cpiFn = __;
     expect(cpiFn(lineItemsMap['1'].nonsenseCounter)).to.equal(__);
   });
-
-
 });

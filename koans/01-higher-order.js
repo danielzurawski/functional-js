@@ -4,14 +4,19 @@ const R = require('ramda');
 const expect = require('chai').expect;
 const __ = undefined;
 
+// higher order function - a function that takes another function as an argument
 describe('higher order functions', () => {
-  // higher order function - a function that takes another function as an argument
+  // Ramda API docs: http://ramdajs.com/0.21.0/docs/
+
   it('The map relates a sequence to another', () => {
     const arr = [1, 2, 3];
 
     expect(R.map((x) => x * 4, arr)).to.deep.equal(__);
   });
 
+  it('Now implement a vanilla version of map', () => {
+
+  });
 
   it('A filter can be strong', () => {
     const arr = ['anything', 'goes', 'here'];
@@ -34,6 +39,10 @@ describe('higher order functions', () => {
     expect(R.filter(between, arr)).to.deep.equal([10, 20, 30]);
   });
 
+  it('Now try and implement vanilla filter', () => {
+
+  });
+
   it('Maps and filters may be combined', () => {
     const arr = [1, 2, 3, 4, 5, 6, 7, 8];
 
@@ -44,9 +53,20 @@ describe('higher order functions', () => {
 
   });
 
-  it('group by primary key', () => {
-    const arr = [{id: 1, firstName: 'Bob' }, { id: 2, firstName: 'John' }, { id: 3, firstName: 'John' }];
+  it('sometimes you want to recude an array of things to a single value', () => {
+    const arr = [1, 2, 3, 4];
+    expect(R.reduce(R.add, 2, arr))
+      .to.deep.equal(__);
+  });
 
+  it('group by primary key', () => {
+    const arr = [
+      { id: 1, firstName: 'Bob', lastName: 'Stone' },
+      { id: 2, firstName: 'John', lastName: 'Stone' },
+      { id: 3, firstName: 'John', lastName: 'Stone' }
+    ];
+
+    // No need to write anonynmous function to get to firstName
     expect(R.groupBy(R.prop('firstName'),
                      arr)).to.deep.equal(__);
 
@@ -92,7 +112,7 @@ describe('higher order functions', () => {
   });
 
   it('Sometimes you want to create a map out of two arrays ', () => {
-    // Hint: zip
+    // Hint: search documentation for zip
     const ids = [1, 2];
     const obj = [{ firstName: 'John' }, { firstName: 'Alice' }];
     expect(__)
@@ -131,17 +151,19 @@ describe('higher order functions', () => {
       .to.deep.equal(newLineItemsMap);
   });
 
-  it('sometimes you want to recude an array of objects to a single value', () => {
-    const arr = [1, 2, 3, 4];
-    expect(R.reduce(R.add, 2, arr))
-      .to.deep.equal(__);
-  });
-
   it('now lets suppose you want to add all the nonsenseCounters, but only if the campaign id is less than 3', () => {
     const arr = [1, 2, 3, 4];
     const fun = () => __;
 
     expect(R.reduce(fun, 0, arr))
       .to.deep.equal(__);
+  });
+
+  it('now implement filter using reduce', () => {
+
+  });
+
+  it('now implement map using reduce', () => {
+
   });
 });
