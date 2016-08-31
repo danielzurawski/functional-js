@@ -159,6 +159,9 @@ describe('higher order functions', () => {
       .to.deep.equal(__);
   });
 
+  const concat = (a, b) => {
+    return a.concat([b]);
+  };
   it('now implement filter using reduce', () => {
 
   });

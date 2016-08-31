@@ -11,7 +11,7 @@ describe('Composition, partial application and currying', () => {
     expect(getFirstNames(students)).to.deep.equal(['John', 'Alice']);
   });
 
-  it('Take the vanilla version of filter from previous exercises and add some curry a\'la R.filter', () => {
+  it('Take the vanilla version of filter from previous exercises and add some curry', () => {
 
   });
 
